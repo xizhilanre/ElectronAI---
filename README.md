@@ -1,4 +1,4 @@
-# VChat - 跨平台AI桌面聊天应用
+# ElectronAi - 轻量级跨平台聊天应用
 
 一个基于 Vue 3.5 和 Electron 构建的现代化、轻量级跨平台AI聊天应用，支持多种大语言模型提供商。
 
@@ -33,7 +33,6 @@
 - **Dexie.js** - IndexedDB包装库，用于本地数据存储
 
 ### AI模型集成
-- **OpenAI API** - GPT系列模型
 - **百度千帆** - 文心一言模型
 - **阿里通义** - 通义千问模型
 - **DeepSeek** - 深度求索模型
@@ -49,7 +48,6 @@
 1. **克隆项目**
 ```bash
 git clone https://github.com/your-username/vchat.git
-cd vchat
 ```
 
 2. **安装依赖**
@@ -75,32 +73,14 @@ npm run package
 
 ### 模型配置
 在应用设置中可以配置以下模型提供商：
-- **OpenAI**: 需要 API Key，支持 GPT-3.5/GPT-4
 - **百度千帆**: 需要 API Key 和 Secret Key
 - **阿里通义**: 需要 API Key
 - **DeepSeek**: 需要 API Key
 
-### 环境变量
-创建 `.env` 文件配置默认设置：
-```env
-# OpenAI 配置
-OPENAI_API_KEY=your_openai_api_key
-
-# 百度千帆配置
-BAIDU_API_KEY=your_baidu_api_key
-BAIDU_SECRET_KEY=your_baidu_secret_key
-
-# 阿里通义配置
-ALI_API_KEY=your_alibaba_api_key
-
-# DeepSeek 配置
-DEEPSEEK_API_KEY=your_deepseek_api_key
-```
-
 ## 🏗 项目结构
 
 ```
-vchat/
+ElectronAI/
 ├── src/
 │   ├── components/          # Vue组件
 │   │   ├── Button.vue
