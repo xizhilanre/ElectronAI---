@@ -155,30 +155,6 @@ vchat/
 - 支持本地数据加密存储
 - 遵循最小权限原则
 
-## 🤝 贡献指南
-
-1. Fork 项目
-2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 创建 Pull Request
-
-## 📝 许可证
-
-MIT License - 详见 [LICENSE](LICENSE) 文件
-
-## 🆘 支持与反馈
-
-- 提交 Issue: [GitHub Issues](https://github.com/your-username/vchat/issues)
-- 联系作者: [vikingmute@gmail.com](mailto:vikingmute@gmail.com)
-
-## 🙏 致谢
-
-- Vue.js 团队提供优秀的前端框架
-- Electron 团队提供跨平台桌面应用解决方案
-- 各AI模型提供商的API支持
-- 开源社区的支持和贡献
-
 ---
 
 ⭐ 如果这个项目对你有帮助，请给个 Star 支持一下！
