@@ -48,10 +48,7 @@ const createWindow = async () => {
   } else {
     mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
   }
-  // Open the DevTools.
-  if (!app.isPackaged) {
-    mainWindow.webContents.openDevTools();
-  }
+  // DevTools are no longer opened automatically
 }
 
 // This method will be called when Electron has finished

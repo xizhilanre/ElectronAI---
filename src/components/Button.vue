@@ -2,11 +2,14 @@
   <button
     class="vk-button
     shadow-sm inline-flex items-center justify-center
-     disabled:opacity-50 disabled:pointer-events-none"
+    disabled:opacity-50 disabled:pointer-events-none
+    transform transition-all duration-200 ease-in-out
+    hover:scale-105 active:scale-95
+    hover:shadow-lg active:shadow-md"
     :class="[colorClasses, sizeClasses]"
     :disabled="disabled || loading"
   >
-    <Icon :icon="iconWithLoading" class="mr-2" v-if="iconWithLoading" />
+    <Icon :icon="iconWithLoading" class="mr-2 transition-transform duration-200" v-if="iconWithLoading" />
     <slot></slot>
   </button>
 </template>

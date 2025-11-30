@@ -1,18 +1,52 @@
 <template>
-<div class="h-[10%] bg-gray-200 border-b border-gray-300 flex items-center px-3 justify-between" v-if="convsersation">
-  <h3 class="font-semibold  text-gray-900">{{convsersation.title}}</h3>
-  <span class="text-sm text-gray-500">{{convsersation.updatedAt}}</span>
-</div>
-<div class="w-[80%] mx-auto h-[75%] overflow-y-auto pt-2">
-  <MessageList :messages="filteredMessages" ref="messageListRef"/>
-</div>
-<div class="w-[80%] mx-auto h-[15%] flex items-center">
-  <MessageInput  @create="sendNewMessage" v-model="inputValue" :disabled="messageStore.isMessageLoading"/>
-</div>
+  <!-- 聊天头部 -->
+  <div class="h-20 bg-white/70 backdrop-blur-sm border-b border-slate-200/50 flex items-center px-6 justify-between shadow-sm" v-if="convsersation">
+    <div class="flex items-center space-x-4">
+      <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+        <span class="text-white text-lg">🤖</span>
+      </div>
+      <div>
+        <h3 class="font-bold text-slate-800 text-lg">{{convsersation.title}}</h3>
+        <div class="flex items-center space-x-2 mt-1">
+          <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+            <span class="w-2 h-2 bg-green-400 rounded-full mr-1 animate-pulse"></span>
+            在线
+          </span>
+          <span class="text-xs text-slate-500">{{dayjs(convsersation.updatedAt).format('MM月DD日 HH:mm')}}</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- 右侧操作按钮 -->
+    <div class="flex items-center space-x-2">
+      <button class="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-all duration-200">
+        <span class="text-lg">📎</span>
+      </button>
+      <button class="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-all duration-200">
+        <span class="text-lg">⚙️</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- 消息列表 -->
+  <div class="flex-1 bg-gradient-to-b from-slate-50 to-white overflow-y-auto">
+    <div class="max-w-4xl mx-auto px-6 py-6">
+      <MessageList :messages="filteredMessages" ref="messageListRef"/>
+    </div>
+  </div>
+  
+  <!-- 输入区域 -->
+  <div class="bg-white/70 backdrop-blur-sm border-t border-slate-200/50 p-6">
+    <div class="max-w-4xl mx-auto">
+      <MessageInput  @create="sendNewMessage" v-model="inputValue" :disabled="messageStore.isMessageLoading"/>
+    </div>
+  </div>
 </template>
 <script lang="ts" setup>
 import { ref, watch, onMounted, computed, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
+import dayjs from 'dayjs'
 import MessageInput from '../components/MessageInput.vue'
 import MessageList from '../components/MessageList.vue'
 import { useConversationStore } from '../stores/conversation'
