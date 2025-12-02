@@ -47,7 +47,7 @@
 
 1. **克隆项目**
 ```bash
-git clone https://github.com/your-username/vchat.git
+git clone https://github.com/xizhilanre/ElectronAI---.git
 ```
 
 2. **安装依赖**
