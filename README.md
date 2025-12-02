@@ -4,7 +4,7 @@
 
 ## 🌟 功能特性
 
-- **🚀 多模型支持**: 集成 OpenAI、DeepSeek、文心一言、通义千问等主流AI模型
+- **🚀 多模型支持**: 集成 DeepSeek、文心一言、通义千问等主流AI模型
 - **💬 智能对话**: 支持多轮对话，上下文记忆，流式响应
 - **🌍 跨平台**: 基于 Electron，支持 Windows、macOS、Linux
 - **🎨 现代化UI**: 使用 Vue 3.5 + Tailwind CSS，界面简洁美观
@@ -57,7 +57,7 @@ npm install
 
 3. **开发模式运行**
 ```bash
-npm start
+npm run start
 ```
 
 4. **构建应用**
